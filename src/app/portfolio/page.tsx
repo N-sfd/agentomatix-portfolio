@@ -3,7 +3,7 @@ import ProjectCard from "@/components/ProjectCard";
 import { projects, services, techStack } from "@/data/projects";
 
 export const metadata: Metadata = {
-  title: "Consult America AI Portfolio",
+  title: "Agentomatic AI Portfolio",
   description:
     "AI web apps, OpenAI tools, SaaS dashboards, business automation, and AI agent workflows built by Consult America.",
 };
@@ -20,10 +20,10 @@ export default function PortfolioPage() {
             Consult America
           </p>
           <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl md:text-6xl">
-            Consult America AI Portfolio
+            Agentomatic AI Portfolio
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-slate-600 sm:text-xl">
-            AI web apps, OpenAI tools, SaaS dashboards, business automation, and AI agent workflows.
+            AI web apps, OpenAI tools, SaaS dashboards, and business automation platforms.
           </p>
 
           <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-slate-500">
@@ -121,16 +121,77 @@ export default function PortfolioPage() {
         </div>
       </section>
 
+      {/* Why Work With Consult America */}
+      <section className="border-y border-slate-100 bg-slate-50/60 py-20 sm:py-24">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+              Why Work With Consult America
+            </h2>
+            <p className="mt-4 text-slate-600">
+              What sets these builds apart from a generic developer-for-hire.
+            </p>
+          </div>
+
+          <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2">
+            {[
+              {
+                title: "Full-Stack + AI Integration",
+                description:
+                  "React, Next.js, and the OpenAI API combined into one production build, not just a UI mockup.",
+              },
+              {
+                title: "Fast Delivery",
+                description:
+                  "Most projects go from concept to a working, deployed demo in 1-3 weeks.",
+              },
+              {
+                title: "Clean UI/UX",
+                description:
+                  "Production-ready interfaces designed to feel like a real product, not a prototype.",
+              },
+              {
+                title: "Cross-Industry Experience",
+                description:
+                  "Healthcare AI, resume/job platforms, booking systems, and AI agent handoff workflows.",
+              },
+            ].map((item) => (
+              <div
+                key={item.title}
+                className="flex items-start gap-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
+              >
+                <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-blue-600 to-teal-500 text-white">
+                  <svg
+                    className="h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 111.42-1.42l2.79 2.8 6.79-6.8a1 1 0 011.42 0z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </span>
+                <div>
+                  <h3 className="font-semibold text-slate-900">{item.title}</h3>
+                  <p className="mt-1 text-sm leading-relaxed text-slate-600">
+                    {item.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Final CTA */}
       <section id="contact" className="bg-gradient-to-r from-blue-600 to-teal-500">
         <div className="mx-auto max-w-3xl px-6 py-20 text-center sm:py-24">
           <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-            Have an AI app idea?
+            Have an AI app idea? Let&rsquo;s turn it into a working product.
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-lg text-blue-50">
-            I can help turn your AI app, chatbot, dashboard, or automation idea into a working web
-            application.
-          </p>
           <a
             href={`mailto:${CONTACT_EMAIL}`}
             className="mt-8 inline-flex rounded-full bg-white px-8 py-3.5 text-base font-semibold text-blue-700 shadow-md transition-opacity hover:opacity-90"

@@ -101,7 +101,7 @@ export const projects: Project[] = [
       "Responsive design",
     ],
     techStack: ["React", "JavaScript", "Tailwind CSS", "Netlify"],
-    liveUrl: "https://frabjous-queijadas-2649b4.netlify.app/",
+    liveUrl: "https://smart-appliances-e0rrkbewk-n-sfds-projects.vercel.app",
   },
 ];
 
