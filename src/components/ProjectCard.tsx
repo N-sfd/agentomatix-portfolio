@@ -2,7 +2,10 @@ import type { Project } from "@/data/projects";
 
 export default function ProjectCard({ project }: { project: Project }) {
   return (
-    <div className="flex flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-lg sm:p-7">
+    <div className="flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-shadow hover:shadow-lg">
+      <ProjectPreview project={project} />
+
+      <div className="flex flex-1 flex-col p-6 sm:p-7">
       <div className="mb-3 inline-flex w-fit items-center rounded-full bg-teal-50 px-3 py-1 text-xs font-medium text-teal-700">
         {project.category}
       </div>
@@ -64,6 +67,40 @@ export default function ProjectCard({ project }: { project: Project }) {
           Concept / Private Build
         </span>
       )}
+      </div>
+    </div>
+  );
+}
+
+function ProjectPreview({ project }: { project: Project }) {
+  if (project.image) {
+    return (
+      <div className="relative aspect-[16/10] w-full overflow-hidden border-b border-slate-100 bg-slate-100">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={project.image}
+          alt={`Screenshot of ${project.name}`}
+          loading="lazy"
+          className="h-full w-full object-cover object-top"
+        />
+      </div>
+    );
+  }
+
+  const initials = project.name
+    .split(" ")
+    .map((word) => word[0])
+    .join("")
+    .slice(0, 2)
+    .toUpperCase();
+
+  return (
+    <div className="relative flex aspect-[16/10] w-full flex-col items-center justify-center border-b border-slate-100 bg-gradient-to-br from-blue-600 to-teal-500 px-6 text-center">
+      <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/15 text-xl font-bold text-white ring-1 ring-white/25">
+        {initials}
+      </span>
+      <p className="mt-3 text-base font-semibold text-white">{project.name}</p>
+      <p className="mt-1 text-xs font-medium text-white/80">{project.category}</p>
     </div>
   );
 }

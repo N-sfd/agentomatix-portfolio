@@ -10,6 +10,13 @@ export const metadata: Metadata = {
 
 const CONTACT_EMAIL = "hello@consultamerica.com";
 
+// Freelance profiles. For freelance work, linking to Upwork/Fiverr converts
+// better than personal email. Paste your profile URL(s) here to turn the
+// contact button into a direct "Hire" link. If both are empty, the button
+// gracefully falls back to email.
+const UPWORK_PROFILE_URL = ""; // e.g. https://www.upwork.com/freelancers/~01abc123
+const FIVERR_PROFILE_URL = ""; // e.g. https://www.fiverr.com/yourusername
+
 export default function PortfolioPage() {
   return (
     <main className="bg-white text-slate-900">
@@ -192,12 +199,39 @@ export default function PortfolioPage() {
           <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
             Have an AI app idea? Let&rsquo;s turn it into a working product.
           </h2>
-          <a
-            href={`mailto:${CONTACT_EMAIL}`}
-            className="mt-8 inline-flex rounded-full bg-white px-8 py-3.5 text-base font-semibold text-blue-700 shadow-md transition-opacity hover:opacity-90"
-          >
-            Contact Consult America
-          </a>
+
+          <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            {UPWORK_PROFILE_URL ? (
+              <a
+                href={UPWORK_PROFILE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex w-full justify-center rounded-full bg-white px-8 py-3.5 text-base font-semibold text-blue-700 shadow-md transition-opacity hover:opacity-90 sm:w-auto"
+              >
+                Hire on Upwork
+              </a>
+            ) : null}
+
+            {FIVERR_PROFILE_URL ? (
+              <a
+                href={FIVERR_PROFILE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex w-full justify-center rounded-full border border-white/70 bg-white/10 px-8 py-3.5 text-base font-semibold text-white shadow-md transition-colors hover:bg-white/20 sm:w-auto"
+              >
+                Hire on Fiverr
+              </a>
+            ) : null}
+
+            {!UPWORK_PROFILE_URL && !FIVERR_PROFILE_URL ? (
+              <a
+                href={`mailto:${CONTACT_EMAIL}`}
+                className="inline-flex w-full justify-center rounded-full bg-white px-8 py-3.5 text-base font-semibold text-blue-700 shadow-md transition-opacity hover:opacity-90 sm:w-auto"
+              >
+                Contact Consult America
+              </a>
+            ) : null}
+          </div>
         </div>
       </section>
     </main>

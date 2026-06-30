@@ -6,7 +6,18 @@ export type Project = {
   features: string[];
   techStack: string[];
   liveUrl?: string;
+  /**
+   * Screenshot/preview image for the project card. Live apps use an
+   * auto-generated screenshot of the deployed site; concept builds without a
+   * public URL fall back to a styled placeholder rendered in ProjectCard.
+   */
+  image?: string;
 };
+
+/** Builds a live screenshot URL of a deployed site (no API key required). */
+function screenshot(url: string): string {
+  return `https://image.thum.io/get/width/1200/crop/750/noanimate/${url}`;
+}
 
 export const projects: Project[] = [
   {
@@ -24,6 +35,7 @@ export const projects: Project[] = [
     ],
     techStack: ["React", "Next.js", "OpenAI API", "Tailwind CSS", "Vercel"],
     liveUrl: "https://grammarly-app-seven.vercel.app/",
+    image: screenshot("https://grammarly-app-seven.vercel.app/"),
   },
   {
     slug: "joblens",
@@ -40,6 +52,7 @@ export const projects: Project[] = [
     ],
     techStack: ["React", "Next.js", "OpenAI API", "Tailwind CSS", "Vercel"],
     liveUrl: "https://joblens-seven.vercel.app/",
+    image: screenshot("https://joblens-seven.vercel.app/"),
   },
   {
     slug: "relay",
@@ -86,6 +99,7 @@ export const projects: Project[] = [
     ],
     techStack: ["React", "Next.js", "Tailwind CSS", "Vercel"],
     liveUrl: "https://appointease-psi.vercel.app/",
+    image: screenshot("https://appointease-psi.vercel.app/"),
   },
   {
     slug: "smart-appliances",
@@ -102,6 +116,7 @@ export const projects: Project[] = [
     ],
     techStack: ["React", "JavaScript", "Tailwind CSS", "Netlify"],
     liveUrl: "https://smart-appliances-e0rrkbewk-n-sfds-projects.vercel.app",
+    image: screenshot("https://smart-appliances-e0rrkbewk-n-sfds-projects.vercel.app"),
   },
 ];
 
