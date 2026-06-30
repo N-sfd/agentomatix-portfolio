@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Agentomatic AI Portfolio",
+  title: "Agentomatix AI Portfolio",
   description:
     "AI web apps, OpenAI tools, SaaS dashboards, business automation, and AI agent workflows built by Consult America.",
 };

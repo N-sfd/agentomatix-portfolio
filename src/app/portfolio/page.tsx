@@ -3,7 +3,7 @@ import ProjectCard from "@/components/ProjectCard";
 import { projects, services, techStack } from "@/data/projects";
 
 export const metadata: Metadata = {
-  title: "Agentomatic AI Portfolio",
+  title: "Agentomatix AI Portfolio",
   description:
     "AI web apps, OpenAI tools, SaaS dashboards, business automation, and AI agent workflows built by Consult America.",
 };
@@ -27,7 +27,7 @@ export default function PortfolioPage() {
             Consult America
           </p>
           <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl md:text-6xl">
-            Agentomatic AI Portfolio
+            Agentomatix AI Portfolio
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-slate-600 sm:text-xl">
             AI web apps, OpenAI tools, SaaS dashboards, and business automation platforms.
