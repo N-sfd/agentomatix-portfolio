@@ -16,25 +16,27 @@ export default function ProjectCard({ project }: { project: Project }) {
         {project.description}
       </p>
 
-      <ul className="mt-4 space-y-2">
-        {project.features.map((feature) => (
-          <li key={feature} className="flex items-start gap-2 text-sm text-slate-700">
-            <svg
-              className="mt-0.5 h-4 w-4 flex-shrink-0 text-blue-600"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-              aria-hidden="true"
-            >
-              <path
-                fillRule="evenodd"
-                d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 111.42-1.42l2.79 2.8 6.79-6.8a1 1 0 011.42 0z"
-                clipRule="evenodd"
-              />
-            </svg>
-            <span>{feature}</span>
-          </li>
-        ))}
-      </ul>
+      {project.features.length > 0 ? (
+        <ul className="mt-4 space-y-2">
+          {project.features.map((feature) => (
+            <li key={feature} className="flex items-start gap-2 text-sm text-slate-700">
+              <svg
+                className="mt-0.5 h-4 w-4 flex-shrink-0 text-blue-600"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 111.42-1.42l2.79 2.8 6.79-6.8a1 1 0 011.42 0z"
+                  clipRule="evenodd"
+                />
+              </svg>
+              <span>{feature}</span>
+            </li>
+          ))}
+        </ul>
+      ) : null}
 
       <div className="mt-5 flex flex-wrap gap-2">
         {project.techStack.map((tech) => (
