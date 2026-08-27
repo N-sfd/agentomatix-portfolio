@@ -5,7 +5,7 @@ import { projects, services, techStack } from "@/data/projects";
 export const metadata: Metadata = {
   title: "Agentomatix AI Portfolio",
   description:
-    "AI web apps, OpenAI tools, SaaS dashboards, business automation, and AI agent workflows built by Consult America.",
+    "AI web apps, business platforms, healthcare AI, e-commerce systems, and SaaS dashboards built by Consult America.",
 };
 
 const CONTACT_EMAIL = "hello@consultamerica.com";
@@ -16,6 +16,39 @@ const CONTACT_EMAIL = "hello@consultamerica.com";
 // gracefully falls back to email.
 const UPWORK_PROFILE_URL = ""; // e.g. https://www.upwork.com/freelancers/~01abc123
 const FIVERR_PROFILE_URL = ""; // e.g. https://www.fiverr.com/yourusername
+
+const whyItems = [
+  {
+    title: "Full-Stack + AI Integration",
+    description:
+      "Frontend, backend, APIs, databases, and AI workflows combined into complete working applications.",
+  },
+  {
+    title: "Business-Focused Product Thinking",
+    description:
+      "Each project is designed around a real use case, user workflow, and business outcome.",
+  },
+  {
+    title: "Fast MVP Delivery",
+    description:
+      "Product ideas can move quickly from concept to deployed demo with clean, testable implementation.",
+  },
+  {
+    title: "Clean UI and Responsive Design",
+    description:
+      "Interfaces are built to feel modern, professional, and usable across desktop and mobile devices.",
+  },
+  {
+    title: "Cross-Industry Experience",
+    description:
+      "Experience across healthcare AI, resume platforms, writing tools, commerce systems, booking apps, consulting websites, and service marketplaces.",
+  },
+  {
+    title: "Deployment-Ready Builds",
+    description:
+      "Projects are deployed using platforms such as Cloudflare Pages, Vercel, Netlify, Firebase, and Supabase.",
+  },
+];
 
 export default function PortfolioPage() {
   return (
@@ -30,13 +63,15 @@ export default function PortfolioPage() {
             Agentomatix AI Portfolio
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-slate-600 sm:text-xl">
-            AI web apps, OpenAI tools, SaaS dashboards, and business automation platforms.
+            AI web apps, business platforms, healthcare AI, e-commerce systems, and SaaS dashboards
+            built with modern full-stack technologies.
           </p>
 
           <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-slate-500">
-            Consult America builds AI-powered web applications, OpenAI tools, SaaS dashboards,
-            resume/job platforms, writing assistants, booking systems, healthcare AI concepts, and
-            AI agent human-handoff workflows.
+            Agentomatix is the AI product and web application portfolio of Consult America,
+            showcasing practical AI tools, SaaS dashboards, business platforms, healthcare AI
+            concepts, e-commerce systems, and service automation applications built from idea to
+            deployment.
           </p>
 
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -63,8 +98,8 @@ export default function PortfolioPage() {
             Featured Projects
           </h2>
           <p className="mt-4 text-slate-600">
-            A selection of AI-powered web applications built end-to-end&mdash;from product design to
-            deployment.
+            A selection of AI-powered applications, business platforms, and full-stack web products
+            built from product design to live deployment.
           </p>
         </div>
 
@@ -136,33 +171,13 @@ export default function PortfolioPage() {
               Why Work With Consult America
             </h2>
             <p className="mt-4 text-slate-600">
-              What sets these builds apart from a generic developer-for-hire.
+              Practical product development focused on real business use cases, not just design
+              mockups.
             </p>
           </div>
 
-          <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2">
-            {[
-              {
-                title: "Full-Stack + AI Integration",
-                description:
-                  "React, Next.js, and the OpenAI API combined into one production build, not just a UI mockup.",
-              },
-              {
-                title: "Fast Delivery",
-                description:
-                  "Most projects go from concept to a working, deployed demo in 1-3 weeks.",
-              },
-              {
-                title: "Clean UI/UX",
-                description:
-                  "Production-ready interfaces designed to feel like a real product, not a prototype.",
-              },
-              {
-                title: "Cross-Industry Experience",
-                description:
-                  "Healthcare AI, resume/job platforms, booking systems, and AI agent handoff workflows.",
-              },
-            ].map((item) => (
+          <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {whyItems.map((item) => (
               <div
                 key={item.title}
                 className="flex items-start gap-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
@@ -197,8 +212,12 @@ export default function PortfolioPage() {
       <section id="contact" className="bg-gradient-to-r from-blue-600 to-teal-500">
         <div className="mx-auto max-w-3xl px-6 py-20 text-center sm:py-24">
           <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-            Have an AI app idea? Let&rsquo;s turn it into a working product.
+            Have an AI product or business app idea?
           </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-white/90 sm:text-lg">
+            Let&rsquo;s turn your idea into a working web application, AI tool, SaaS dashboard, or
+            automation platform.
+          </p>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
             {UPWORK_PROFILE_URL ? (

@@ -25,7 +25,7 @@ export const projects: Project[] = [
     name: "ConsultAmerica",
     category: "Enterprise Transformation Platform",
     description:
-      "ConsultAmerica is an enterprise transformation and consulting platform designed to present AI transformation, digital modernization, business process improvement, professional consulting services, and enterprise technology solutions. The platform supports a strong business-facing brand presence with clear service sections, responsive design, and professional company positioning.",
+      "ConsultAmerica is an enterprise transformation and consulting platform built to present AI transformation, digital modernization, business process improvement, and professional technology consulting services. The website supports a strong business-facing brand presence with clear service sections, responsive design, and professional company positioning.",
     features: [],
     techStack: [
       "Enterprise Transformation",
@@ -43,7 +43,7 @@ export const projects: Project[] = [
     name: "MediGuide AI",
     category: "Healthcare AI Assistant",
     description:
-      "MediGuide AI is a healthcare-focused AI platform designed to support clearer health conversations, patient-friendly explanations, structured intake, information summaries, safe AI boundaries, and responsible healthcare communication workflows. The project demonstrates practical healthcare AI design with a focus on clarity, safety, trust, and user support.",
+      "MediGuide AI is a healthcare-focused AI platform designed to support clearer health conversations, patient-friendly explanations, structured intake, information summaries, safe AI boundaries, and responsible healthcare communication workflows. The project demonstrates practical healthcare AI design with emphasis on clarity, safety, trust, and user support.",
     features: [],
     techStack: [
       "Healthcare AI",
@@ -61,13 +61,13 @@ export const projects: Project[] = [
     name: "ImportNest AI Agent",
     category: "AI Commerce Platform",
     description:
-      "ImportNest is an AI-powered commerce platform that helps retailers improve product discovery, customer support, product recommendations, inventory visibility, and online shopping workflows. It is designed for retailers, online stores, Shopify/WooCommerce-style businesses, and product-based websites that want intelligent commerce automation.",
+      "ImportNest is an AI-powered commerce platform that helps retailers improve product discovery, product recommendations, customer support, inventory visibility, and online shopping workflows. It is designed for retailers, online stores, Shopify/WooCommerce-style businesses, and product-based websites that want intelligent commerce automation.",
     features: [],
     techStack: [
       "AI Commerce",
       "Retail AI",
-      "Product Recommendations",
       "Shopping Assistant",
+      "Product Recommendations",
       "Next.js",
       "OpenAI",
     ],
@@ -79,7 +79,7 @@ export const projects: Project[] = [
     name: "SmartWrite AI",
     category: "AI Writing Assistant",
     description:
-      "SmartWrite AI is an AI-powered writing assistant that helps users improve grammar, clarity, tone, readability, and overall writing quality. It supports rewriting, writing scores, real-time suggestions, and writing modes for general, email, resume, academic, healthcare, and business content.",
+      "SmartWrite AI is an AI-powered writing assistant that helps users improve grammar, clarity, tone, readability, and overall writing quality. It supports rewriting, writing scores, real-time suggestions, and specialized modes for general, email, resume, academic, healthcare, and business content.",
     features: [],
     techStack: [
       "AI Writing",
@@ -115,7 +115,7 @@ export const projects: Project[] = [
     name: "Bosiano",
     category: "Fashion E-Commerce Platform",
     description:
-      "Bosiano is an Italian heritage-inspired fashion marketplace designed for modern online shopping experiences. It includes product presentation, responsive design, luxury fashion branding, customer-facing e-commerce pages, and a polished marketplace-style interface.",
+      "Bosiano is an Italian heritage-inspired fashion marketplace designed for modern online shopping experiences. It includes product presentation, luxury fashion branding, responsive design, customer-facing e-commerce pages, and a polished marketplace-style interface.",
     features: [],
     techStack: [
       "Fashion Marketplace",
@@ -187,21 +187,23 @@ export const projects: Project[] = [
 export const services: string[] = [
   "AI Web App Development",
   "OpenAI API Integration",
-  "AI Chatbot Development",
-  "RAG and Document Q&A Workflows",
-  "AI Resume Analyzer Development",
   "AI Writing Assistant Development",
+  "AI Resume Analyzer Development",
+  "AI Commerce Agent Development",
+  "Healthcare AI Workflow Design",
   "SaaS Dashboard Development",
   "Appointment Booking Apps",
+  "E-Commerce and Marketplace Platforms",
+  "Business Website Development",
   "Service Marketplace Platforms",
-  "AI Agent and Human Handoff Workflows",
+  "API and Database Integration",
 ];
 
 export const techStack: string[] = [
   "React",
   "Next.js",
-  "JavaScript",
   "TypeScript",
+  "JavaScript",
   "Node.js",
   "Python",
   "Tailwind CSS",
@@ -209,7 +211,8 @@ export const techStack: string[] = [
   "REST APIs",
   "Firebase",
   "Supabase",
+  "Cloudflare Pages",
   "Vercel",
   "Netlify",
-  "Cloudflare",
+  "GitHub",
 ];

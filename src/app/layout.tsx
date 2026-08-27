@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Agentomatix AI Portfolio",
   description:
-    "AI web apps, OpenAI tools, SaaS dashboards, business automation, and AI agent workflows built by Consult America.",
+    "AI web apps, business platforms, healthcare AI, e-commerce systems, and SaaS dashboards built by Consult America.",
 };
 
 export default function RootLayout({
