@@ -337,32 +337,37 @@ export const services: ServiceItem[] = [
       "Build AI-powered web applications using OpenAI API, React, Next.js, and modern cloud deployment.",
   },
   {
-    title: "AI Writing Tools",
+    title: "OpenAI API Integration",
+    description:
+      "Connect production apps to OpenAI models for writing, analysis, recommendations, and automation workflows.",
+  },
+  {
+    title: "AI Writing Assistant Development",
     description:
       "Create grammar checkers, content generators, rewriting tools, tone editors, and writing dashboards.",
   },
   {
-    title: "AI Resume and Career Platforms",
+    title: "AI Resume Analyzer Development",
     description:
       "Build resume analyzers, ATS scoring tools, job matching workflows, and cover-letter generators.",
   },
   {
-    title: "AI Commerce Agents",
+    title: "AI Commerce Agent Development",
     description:
       "Create shopping assistants, product recommendation systems, product Q&A, and e-commerce automation tools.",
   },
   {
-    title: "Healthcare AI Workflows",
+    title: "Healthcare AI Workflow Design",
     description:
       "Design safe healthcare AI tools for intake, summaries, patient-friendly explanations, and responsible communication.",
   },
   {
-    title: "SaaS Dashboards",
+    title: "SaaS Dashboard Development",
     description:
       "Build modern dashboards for business workflows, admin panels, analytics, and user management.",
   },
   {
-    title: "Booking and Scheduling Apps",
+    title: "Appointment Booking Apps",
     description:
       "Create appointment booking, service scheduling, availability, confirmation, and customer workflow systems.",
   },
@@ -370,6 +375,16 @@ export const services: ServiceItem[] = [
     title: "E-Commerce and Marketplace Platforms",
     description:
       "Build product catalogs, marketplace layouts, service platforms, fashion stores, and retail websites.",
+  },
+  {
+    title: "Business Website Development",
+    description:
+      "Create polished business websites for consulting firms, local companies, and service brands.",
+  },
+  {
+    title: "Service Marketplace Platforms",
+    description:
+      "Build service discovery, booking, and marketplace experiences for home and professional services.",
   },
   {
     title: "API and Database Integration",

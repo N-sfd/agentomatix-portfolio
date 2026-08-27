@@ -26,10 +26,10 @@ export const metadata: Metadata = {
 const CONTACT_EMAIL = "hello@consultamerica.com";
 
 const trustBadges = [
-  "OpenAI API Integration",
-  "React / Next.js",
-  "SaaS Dashboards",
-  "Cloud Deployment",
+  "AI commerce workflows",
+  "Healthcare AI workflows",
+  "Business automation platforms",
+  "SaaS dashboard development",
 ];
 
 const stats = [
@@ -80,14 +80,14 @@ export default function PortfolioPage() {
               Agentomatix AI Portfolio
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-slate-300">
-              AI web applications, business platforms, healthcare AI tools, e-commerce systems, and
-              SaaS dashboards built from idea to deployment.
+              AI web applications, healthcare AI tools, e-commerce platforms, SaaS dashboards,
+              business websites, and service automation systems built from idea to deployment.
             </p>
             <p className="mt-4 max-w-xl text-sm leading-relaxed text-slate-400 sm:text-base">
               Agentomatix is the AI product and web application portfolio of Consult America,
-              showcasing practical AI tools, full-stack web platforms, automation workflows, and
-              business-ready applications across healthcare, commerce, content, career, consulting,
-              and service industries.
+              showcasing practical full-stack applications across healthcare, commerce, content
+              creation, career tools, consulting platforms, appointment booking, and service
+              marketplaces.
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
