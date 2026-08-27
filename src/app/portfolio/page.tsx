@@ -76,11 +76,11 @@ export default function PortfolioPage() {
           <div className="min-w-0">
             <p className="inline-flex max-w-full items-center gap-2 rounded-full border border-cyan-400/20 bg-slate-950/60 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-cyan-200 sm:gap-2.5 sm:text-xs sm:tracking-[0.18em]">
               <Image
-                src="/consult-america-logo.svg"
+                src="/consult-america-logo.png"
                 alt=""
-                width={20}
-                height={20}
-                className="h-5 w-5 shrink-0 object-contain"
+                width={24}
+                height={24}
+                className="h-6 w-6 shrink-0 object-contain rounded-md"
               />
               <span className="truncate">Consult America</span>
             </p>
@@ -437,11 +437,11 @@ export default function PortfolioPage() {
           <div className="flex flex-col items-center gap-3 sm:flex-row sm:items-start">
             <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-cyan-400/20 bg-slate-950/60">
               <Image
-                src="/consult-america-logo.svg"
+                src="/consult-america-logo.png"
                 alt="Consult America logo"
                 width={36}
                 height={36}
-                className="h-9 w-9 object-contain"
+                className="h-9 w-9 object-contain rounded-xl"
               />
             </span>
             <div>

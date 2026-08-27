@@ -42,11 +42,11 @@ export default function SiteHeader() {
         <a href="#top" className="group flex min-w-0 items-center gap-2.5 sm:gap-3">
           <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-cyan-400/20 bg-slate-950/60">
             <Image
-              src="/consult-america-logo.svg"
+              src="/consult-america-logo.png"
               alt="Consult America logo"
               width={40}
               height={40}
-              className="h-9 w-9 object-contain sm:h-10 sm:w-10"
+              className="h-9 w-9 object-contain rounded-xl sm:h-10 sm:w-10"
               priority
             />
           </span>

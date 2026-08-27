@@ -33,10 +33,7 @@ export const metadata: Metadata = {
     ],
   },
   icons: {
-    icon: [
-      { url: "/consult-america-logo.svg", type: "image/svg+xml" },
-      { url: "/consult-america-logo.png", type: "image/png" },
-    ],
+    icon: "/consult-america-logo.png",
     apple: "/consult-america-logo.png",
   },
 };
