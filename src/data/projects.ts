@@ -122,7 +122,7 @@ export const projects: Project[] = [
       "Vercel",
     ],
     liveUrl: "https://importnest.vercel.app/",
-    image: screenshot("https://importnest.vercel.app/"),
+    image: "/projects/importnest.png",
     details: {
       problem:
         "Shoppers struggle to compare real purchase cost across retailers when shipping, fees, and offer quality are unclear.",
