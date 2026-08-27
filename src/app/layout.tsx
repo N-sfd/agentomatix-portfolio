@@ -23,12 +23,18 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://agentomatix-portfolio.pages.dev/portfolio/",
     siteName: "Agentomatix AI Portfolio",
+    images: [
+      {
+        url: "https://agentomatix-portfolio.pages.dev/logo.png",
+        width: 256,
+        height: 256,
+        alt: "Consult America logo",
+      },
+    ],
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Agentomatix AI Portfolio | Consult America",
-    description:
-      "AI web applications, SaaS dashboards, healthcare AI tools, e-commerce platforms, and business applications by Consult America.",
+  icons: {
+    icon: "/logo.png",
+    apple: "/logo.png",
   },
 };
 

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const navLinks = [
@@ -38,9 +39,14 @@ export default function SiteHeader() {
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-4">
         <a href="#top" className="group flex items-center gap-2.5">
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-cyan-400 to-blue-600 text-xs font-bold text-white shadow-[0_0_20px_rgba(34,211,238,0.35)]">
-            A
-          </span>
+          <Image
+            src="/logo.png"
+            alt="Consult America logo"
+            width={36}
+            height={36}
+            className="h-9 w-9 object-contain drop-shadow-[0_0_18px_rgba(34,211,238,0.35)]"
+            priority
+          />
           <span className="text-sm font-semibold tracking-tight text-white sm:text-base">
             Consult America
           </span>

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import SiteHeader from "@/components/SiteHeader";
 import ProjectsSection from "@/components/ProjectsSection";
 import {
@@ -73,7 +74,14 @@ export default function PortfolioPage() {
       <section className="relative pt-28 sm:pt-32">
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 pb-16 lg:grid-cols-2 lg:gap-16 lg:pb-20">
           <div>
-            <p className="inline-flex items-center rounded-full border border-cyan-400/20 bg-cyan-400/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-cyan-200">
+            <p className="inline-flex items-center gap-2.5 rounded-full border border-cyan-400/20 bg-cyan-400/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-cyan-200">
+              <Image
+                src="/logo.png"
+                alt=""
+                width={20}
+                height={20}
+                className="h-5 w-5 object-contain"
+              />
               Consult America
             </p>
             <h1 className="mt-5 text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-[3.4rem] lg:leading-[1.08]">
