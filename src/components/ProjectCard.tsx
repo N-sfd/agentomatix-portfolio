@@ -7,24 +7,24 @@ type ProjectCardProps = {
 
 export default function ProjectCard({ project, onViewDetails }: ProjectCardProps) {
   return (
-    <article className="group relative flex h-full flex-col rounded-3xl p-[1px] transition-transform duration-300 hover:-translate-y-1.5">
+    <article className="group relative flex h-full flex-col rounded-3xl p-[1px] transition-transform duration-300 md:hover:-translate-y-1.5">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-br from-white/15 via-white/5 to-white/10 opacity-100 transition-opacity duration-300 group-hover:opacity-0"
+        className="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-br from-white/15 via-white/5 to-white/10 opacity-100 transition-opacity duration-300 md:group-hover:opacity-0"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-br from-cyan-300 via-blue-500 to-indigo-500 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+        className="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-br from-cyan-300 via-blue-500 to-indigo-500 opacity-0 transition-opacity duration-300 md:group-hover:opacity-100"
       />
 
-      <div className="relative flex h-full flex-col overflow-hidden rounded-[23px] bg-[#0b1428] shadow-[0_22px_55px_-28px_rgba(0,0,0,0.9)] transition-shadow duration-300 group-hover:shadow-[0_28px_70px_-22px_rgba(34,211,238,0.4)]">
-        <div className="relative border-b border-white/10 bg-slate-950/90 p-3.5 sm:p-4">
-          <div className="overflow-hidden rounded-2xl border border-white/15 bg-slate-950 shadow-[0_12px_30px_-12px_rgba(0,0,0,0.8),inset_0_1px_0_rgba(255,255,255,0.06)]">
-            <div className="flex items-center gap-1.5 border-b border-white/10 bg-gradient-to-r from-white/[0.06] to-white/[0.02] px-3 py-2.5">
-              <span className="h-2.5 w-2.5 rounded-full bg-rose-400/90" />
-              <span className="h-2.5 w-2.5 rounded-full bg-amber-400/90" />
-              <span className="h-2.5 w-2.5 rounded-full bg-emerald-400/90" />
-              <span className="ml-2 truncate rounded-md border border-white/5 bg-black/30 px-2.5 py-0.5 text-[10px] text-slate-400">
+      <div className="relative flex h-full flex-col overflow-hidden rounded-[23px] bg-[#0b1428] shadow-[0_22px_55px_-28px_rgba(0,0,0,0.9)] transition-shadow duration-300 md:group-hover:shadow-[0_28px_70px_-22px_rgba(34,211,238,0.4)]">
+        <div className="relative border-b border-white/10 bg-slate-950/90 p-3 sm:p-3.5 lg:p-4">
+          <div className="overflow-hidden rounded-xl border border-white/15 bg-slate-950 shadow-[0_12px_30px_-12px_rgba(0,0,0,0.8),inset_0_1px_0_rgba(255,255,255,0.06)] sm:rounded-2xl">
+            <div className="flex items-center gap-1.5 border-b border-white/10 bg-gradient-to-r from-white/[0.06] to-white/[0.02] px-2.5 py-2 sm:px-3 sm:py-2.5">
+              <span className="h-2 w-2 rounded-full bg-rose-400/90 sm:h-2.5 sm:w-2.5" />
+              <span className="h-2 w-2 rounded-full bg-amber-400/90 sm:h-2.5 sm:w-2.5" />
+              <span className="h-2 w-2 rounded-full bg-emerald-400/90 sm:h-2.5 sm:w-2.5" />
+              <span className="ml-1.5 truncate rounded-md border border-white/5 bg-black/30 px-2 py-0.5 text-[9px] text-slate-400 sm:ml-2 sm:px-2.5 sm:text-[10px]">
                 {project.liveUrl.replace(/^https?:\/\//, "").replace(/\/$/, "")}
               </span>
             </div>
@@ -35,7 +35,7 @@ export default function ProjectCard({ project, onViewDetails }: ProjectCardProps
                   src={project.image}
                   alt={`Screenshot of ${project.name}`}
                   loading="lazy"
-                  className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.04]"
+                  className="h-full w-full object-cover object-top transition-transform duration-500 md:group-hover:scale-[1.04]"
                 />
               ) : (
                 <ProjectPlaceholder project={project} />
@@ -45,7 +45,7 @@ export default function ProjectCard({ project, onViewDetails }: ProjectCardProps
           </div>
         </div>
 
-        <div className="flex flex-1 flex-col p-5 sm:p-6">
+        <div className="flex flex-1 flex-col p-4 sm:p-5 lg:p-6">
           <div className="inline-flex w-fit max-w-full items-center rounded-full border border-cyan-400/20 bg-cyan-400/10 px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.12em] text-cyan-200">
             <span className="truncate">{project.category}</span>
           </div>
@@ -74,7 +74,7 @@ export default function ProjectCard({ project, onViewDetails }: ProjectCardProps
               href={project.liveUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 px-4 py-2.5 text-sm font-semibold text-slate-950 transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300"
+              className="inline-flex min-h-11 flex-1 items-center justify-center gap-1.5 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 px-4 py-2.5 text-sm font-semibold text-slate-950 transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300"
             >
               View Live Demo
               <svg className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -85,7 +85,7 @@ export default function ProjectCard({ project, onViewDetails }: ProjectCardProps
             <button
               type="button"
               onClick={onViewDetails}
-              className="inline-flex flex-1 items-center justify-center rounded-full border border-white/15 bg-white/5 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
+              className="inline-flex min-h-11 flex-1 items-center justify-center rounded-full border border-white/15 bg-white/5 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
             >
               View Details
             </button>

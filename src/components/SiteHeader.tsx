@@ -34,23 +34,23 @@ export default function SiteHeader() {
     <header
       className={`fixed inset-x-0 top-0 z-50 border-b transition-colors ${
         scrolled || open
-          ? "border-white/10 bg-[#070d1a]/80 backdrop-blur-xl"
-          : "border-transparent bg-[#070d1a]/40 backdrop-blur-md"
+          ? "border-white/10 bg-[#070d1a]/90 backdrop-blur-xl"
+          : "border-transparent bg-[#070d1a]/50 backdrop-blur-md"
       }`}
     >
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-4">
-        <a href="#top" className="group flex items-center gap-3">
-          <span className="relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-xl bg-white/5 ring-1 ring-white/10">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:gap-4 sm:px-6 sm:py-3.5 lg:px-8">
+        <a href="#top" className="group flex min-w-0 items-center gap-2.5 sm:gap-3">
+          <span className="relative flex h-9 w-9 shrink-0 items-center justify-center overflow-hidden rounded-xl bg-white/5 ring-1 ring-white/10 sm:h-10 sm:w-10">
             <Image
               src="/logo.png"
               alt="Consult America logo"
               width={40}
               height={40}
-              className="h-9 w-9 object-contain drop-shadow-[0_0_14px_rgba(34,211,238,0.3)]"
+              className="h-8 w-8 object-contain drop-shadow-[0_0_14px_rgba(34,211,238,0.3)] sm:h-9 sm:w-9"
               priority
             />
           </span>
-          <span className="text-sm font-semibold tracking-tight text-white sm:text-base">
+          <span className="truncate text-sm font-semibold tracking-tight text-white sm:text-base">
             Consult America
           </span>
         </a>
@@ -67,17 +67,17 @@ export default function SiteHeader() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-3">
+        <div className="flex shrink-0 items-center gap-2 sm:gap-3">
           <a
             href={CONTACT_MAILTO}
-            className="hidden rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 px-4 py-2 text-sm font-semibold text-slate-950 shadow-[0_0_24px_rgba(34,211,238,0.25)] transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 sm:inline-flex"
+            className="hidden min-h-10 items-center rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 px-4 py-2 text-sm font-semibold text-slate-950 shadow-[0_0_24px_rgba(34,211,238,0.25)] transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 sm:inline-flex"
           >
             Start a Project
           </a>
 
           <button
             type="button"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-white lg:hidden"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 lg:hidden"
             aria-expanded={open}
             aria-controls="mobile-nav"
             aria-label={open ? "Close menu" : "Open menu"}
@@ -104,14 +104,14 @@ export default function SiteHeader() {
       {open ? (
         <div
           id="mobile-nav"
-          className="border-t border-white/10 bg-[#070d1a]/95 px-6 py-4 backdrop-blur-xl lg:hidden"
+          className="max-h-[calc(100dvh-3.5rem)] overflow-y-auto border-t border-white/10 bg-[#070d1a]/98 px-4 py-4 backdrop-blur-xl sm:px-6 lg:hidden"
         >
           <nav className="flex flex-col gap-1" aria-label="Mobile">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="rounded-lg px-3 py-3 text-sm font-medium text-slate-200 hover:bg-white/5 hover:text-white"
+                className="rounded-lg px-3 py-3.5 text-base font-medium text-slate-200 hover:bg-white/5 hover:text-white"
                 onClick={() => setOpen(false)}
               >
                 {link.label}
@@ -119,7 +119,7 @@ export default function SiteHeader() {
             ))}
             <a
               href={CONTACT_MAILTO}
-              className="mt-2 inline-flex justify-center rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 px-4 py-3 text-sm font-semibold text-slate-950"
+              className="mt-2 inline-flex min-h-12 items-center justify-center rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 px-4 py-3 text-sm font-semibold text-slate-950"
               onClick={() => setOpen(false)}
             >
               Start a Project
