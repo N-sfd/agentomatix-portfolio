@@ -29,7 +29,7 @@ export type Project = {
 
 /** Builds a live screenshot URL of a deployed site (no API key required). */
 function screenshot(url: string): string {
-  return `https://image.thum.io/get/width/1200/crop/750/noanimate/${url}`;
+  return `https://image.thum.io/get/width/1280/crop/800/noanimate/${url}`;
 }
 
 export const projectFilters: ProjectFilter[] = [

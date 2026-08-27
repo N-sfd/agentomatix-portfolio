@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { CONTACT_MAILTO } from "@/data/contact";
 
 const navLinks = [
   { href: "#projects", label: "Projects" },
@@ -38,15 +39,17 @@ export default function SiteHeader() {
       }`}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-4">
-        <a href="#top" className="group flex items-center gap-2.5">
-          <Image
-            src="/logo.png"
-            alt="Consult America logo"
-            width={36}
-            height={36}
-            className="h-9 w-9 object-contain drop-shadow-[0_0_18px_rgba(34,211,238,0.35)]"
-            priority
-          />
+        <a href="#top" className="group flex items-center gap-3">
+          <span className="relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-xl bg-white/5 ring-1 ring-white/10">
+            <Image
+              src="/logo.png"
+              alt="Consult America logo"
+              width={40}
+              height={40}
+              className="h-9 w-9 object-contain drop-shadow-[0_0_14px_rgba(34,211,238,0.3)]"
+              priority
+            />
+          </span>
           <span className="text-sm font-semibold tracking-tight text-white sm:text-base">
             Consult America
           </span>
@@ -66,7 +69,7 @@ export default function SiteHeader() {
 
         <div className="flex items-center gap-3">
           <a
-            href="#contact"
+            href={CONTACT_MAILTO}
             className="hidden rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 px-4 py-2 text-sm font-semibold text-slate-950 shadow-[0_0_24px_rgba(34,211,238,0.25)] transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 sm:inline-flex"
           >
             Start a Project
@@ -115,7 +118,7 @@ export default function SiteHeader() {
               </a>
             ))}
             <a
-              href="#contact"
+              href={CONTACT_MAILTO}
               className="mt-2 inline-flex justify-center rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 px-4 py-3 text-sm font-semibold text-slate-950"
               onClick={() => setOpen(false)}
             >

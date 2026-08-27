@@ -17,30 +17,30 @@ export default function ProjectCard({ project, onViewDetails }: ProjectCardProps
         className="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-br from-cyan-300 via-blue-500 to-indigo-500 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
       />
 
-      <div className="relative flex h-full flex-col overflow-hidden rounded-[23px] bg-[#0b1428] shadow-[0_20px_60px_-30px_rgba(0,0,0,0.8)] transition-shadow duration-300 group-hover:shadow-[0_24px_70px_-24px_rgba(34,211,238,0.45)]">
-        <div className="relative border-b border-white/10 bg-slate-950/80 p-3 sm:p-3.5">
-          <div className="overflow-hidden rounded-xl border border-white/10 bg-slate-900 shadow-inner">
-            <div className="flex items-center gap-1.5 border-b border-white/10 bg-white/[0.04] px-3 py-2">
-              <span className="h-2 w-2 rounded-full bg-rose-400/90" />
-              <span className="h-2 w-2 rounded-full bg-amber-400/90" />
-              <span className="h-2 w-2 rounded-full bg-emerald-400/90" />
-              <span className="ml-2 truncate rounded-md bg-white/5 px-2 py-0.5 text-[10px] text-slate-500">
-                {project.liveUrl.replace(/^https?:\/\//, "")}
+      <div className="relative flex h-full flex-col overflow-hidden rounded-[23px] bg-[#0b1428] shadow-[0_22px_55px_-28px_rgba(0,0,0,0.9)] transition-shadow duration-300 group-hover:shadow-[0_28px_70px_-22px_rgba(34,211,238,0.4)]">
+        <div className="relative border-b border-white/10 bg-slate-950/90 p-3.5 sm:p-4">
+          <div className="overflow-hidden rounded-2xl border border-white/15 bg-slate-950 shadow-[0_12px_30px_-12px_rgba(0,0,0,0.8),inset_0_1px_0_rgba(255,255,255,0.06)]">
+            <div className="flex items-center gap-1.5 border-b border-white/10 bg-gradient-to-r from-white/[0.06] to-white/[0.02] px-3 py-2.5">
+              <span className="h-2.5 w-2.5 rounded-full bg-rose-400/90" />
+              <span className="h-2.5 w-2.5 rounded-full bg-amber-400/90" />
+              <span className="h-2.5 w-2.5 rounded-full bg-emerald-400/90" />
+              <span className="ml-2 truncate rounded-md border border-white/5 bg-black/30 px-2.5 py-0.5 text-[10px] text-slate-400">
+                {project.liveUrl.replace(/^https?:\/\//, "").replace(/\/$/, "")}
               </span>
             </div>
-            <div className="relative aspect-[16/10] overflow-hidden">
+            <div className="relative aspect-[16/10] overflow-hidden bg-slate-900">
               {project.image ? (
                 // eslint-disable-next-line @next/next/no-img-element
                 <img
                   src={project.image}
                   alt={`Screenshot of ${project.name}`}
                   loading="lazy"
-                  className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                  className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.04]"
                 />
               ) : (
                 <ProjectPlaceholder project={project} />
               )}
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0b1428]/40 via-transparent to-transparent" />
+              <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/10" />
             </div>
           </div>
         </div>

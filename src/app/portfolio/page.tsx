@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import SiteHeader from "@/components/SiteHeader";
 import ProjectsSection from "@/components/ProjectsSection";
+import { CONTACT_EMAIL, CONTACT_MAILTO } from "@/data/contact";
 import {
   processSteps,
   projects,
@@ -23,8 +24,6 @@ export const metadata: Metadata = {
     siteName: "Agentomatix AI Portfolio",
   },
 };
-
-const CONTACT_EMAIL = "hello@consultamerica.com";
 
 const trustBadges = [
   "AI commerce workflows",
@@ -106,7 +105,7 @@ export default function PortfolioPage() {
                 View Featured Projects
               </a>
               <a
-                href="#contact"
+                href={CONTACT_MAILTO}
                 className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
               >
                 Contact for AI App Development
@@ -145,7 +144,9 @@ export default function PortfolioPage() {
                   <span className="h-2.5 w-2.5 rounded-full bg-rose-400" />
                   <span className="h-2.5 w-2.5 rounded-full bg-amber-400" />
                   <span className="h-2.5 w-2.5 rounded-full bg-emerald-400" />
-                  <span className="ml-3 text-xs text-slate-500">agentomatix.app</span>
+                  <span className="ml-3 truncate text-xs text-slate-500">
+                    agentomatix-portfolio.pages.dev
+                  </span>
                 </div>
                 <div className="grid grid-cols-2 gap-3">
                   {previewCards.map((card, index) => (
@@ -357,7 +358,7 @@ export default function PortfolioPage() {
       </section>
 
       {/* Final CTA */}
-      <section id="contact" className="scroll-mt-24 px-6 pb-28 sm:pb-36">
+      <section id="contact" className="scroll-mt-24 px-6 pb-16 sm:pb-20">
         <div className="relative mx-auto max-w-5xl overflow-hidden rounded-[2rem] border border-cyan-400/20 bg-gradient-to-br from-[#0d1b36] via-[#0a1630] to-[#111827] px-6 py-16 text-center sm:px-12 sm:py-20">
           <div
             aria-hidden="true"
@@ -372,9 +373,17 @@ export default function PortfolioPage() {
               e-commerce platform, booking system, or automation tool.
             </p>
 
+            <div className="mx-auto mt-8 max-w-2xl rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-5 text-left sm:px-6">
+              <p className="text-base font-semibold text-white">Ready to build your AI product?</p>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">
+                Consult America can help turn your idea into a working AI web app, SaaS dashboard,
+                e-commerce platform, booking system, or automation tool.
+              </p>
+            </div>
+
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <a
-                href={`mailto:${CONTACT_EMAIL}`}
+                href={CONTACT_MAILTO}
                 className="inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 px-8 py-3.5 text-sm font-semibold text-slate-950 shadow-[0_0_32px_rgba(34,211,238,0.25)] transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 sm:w-auto"
               >
                 Start a Project
@@ -390,9 +399,42 @@ export default function PortfolioPage() {
             <p className="mt-6 text-sm text-slate-400">
               Available for freelance, contract, and remote AI development projects.
             </p>
+            <a
+              href={CONTACT_MAILTO}
+              className="mt-2 inline-block text-sm font-medium text-cyan-300 transition-colors hover:text-cyan-200"
+            >
+              {CONTACT_EMAIL}
+            </a>
           </div>
         </div>
       </section>
+
+      {/* Footer */}
+      <footer className="border-t border-white/10 bg-[#050a14] px-6 py-12">
+        <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 text-center sm:flex-row sm:items-start sm:justify-between sm:text-left">
+          <div className="flex flex-col items-center gap-3 sm:flex-row sm:items-start">
+            <Image
+              src="/logo.png"
+              alt="Consult America logo"
+              width={40}
+              height={40}
+              className="h-10 w-10 object-contain"
+            />
+            <div>
+              <p className="text-sm font-semibold text-white">
+                Consult America | Agentomatix AI Portfolio
+              </p>
+              <p className="mt-2 max-w-xl text-sm leading-relaxed text-slate-400">
+                AI web apps, SaaS dashboards, healthcare AI, commerce platforms, and business
+                automation systems.
+              </p>
+            </div>
+          </div>
+          <p className="max-w-sm text-sm leading-relaxed text-slate-500">
+            Available for freelance, contract, and remote AI development projects.
+          </p>
+        </div>
+      </footer>
     </main>
   );
 }
