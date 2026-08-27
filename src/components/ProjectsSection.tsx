@@ -16,7 +16,7 @@ export default function ProjectsSection({ projects }: { projects: Project[] }) {
       : projects.filter((project) => project.filters.includes(activeFilter));
 
   return (
-    <section id="projects" className="relative scroll-mt-24 py-24 sm:py-28">
+    <section id="projects" className="relative scroll-mt-24 py-28 sm:py-36">
       <div className="mx-auto max-w-6xl px-6">
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-cyan-300/80">

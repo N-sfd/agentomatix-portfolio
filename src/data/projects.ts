@@ -448,7 +448,7 @@ export const whyItems = [
   {
     title: "Cross-Industry Experience",
     description:
-      "Experience across healthcare AI, commerce, resume platforms, writing tools, booking systems, consulting websites, and service marketplaces.",
+      "Healthcare AI, resume and job platforms, AI writing tools, commerce systems, booking apps, consulting websites, appliance service platforms, and service marketplaces.",
   },
   {
     title: "Deployment-Ready Builds",
@@ -477,6 +477,6 @@ export const processSteps = [
   {
     step: "04",
     title: "Deploy",
-    description: "Test, polish, deploy, and provide handoff documentation.",
+    description: "Test, polish, deploy, and provide delivery documentation.",
   },
 ];

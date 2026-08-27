@@ -31,13 +31,14 @@ const trustBadges = [
   "Healthcare AI workflows",
   "Business automation platforms",
   "SaaS dashboard development",
+  "E-commerce and service automation systems",
 ];
 
 const stats = [
   { value: "9", label: "Live Projects" },
   { value: "6+", label: "Industries" },
-  { value: "AI + Full Stack", label: "Product Builds" },
-  { value: "Vercel / Cloudflare", label: "Cloud Deployed" },
+  { value: "AI + Full Stack", label: "Builds" },
+  { value: "Cloud Deployed", label: "Vercel / Cloudflare" },
 ];
 
 const previewCards = [
@@ -92,10 +93,9 @@ export default function PortfolioPage() {
               business websites, and service automation systems built from idea to deployment.
             </p>
             <p className="mt-4 max-w-xl text-sm leading-relaxed text-slate-400 sm:text-base">
-              Agentomatix is the AI product and web application portfolio of Consult America,
-              showcasing practical full-stack applications across healthcare, commerce, content
-              creation, career tools, consulting platforms, appointment booking, and service
-              marketplaces.
+              Consult America builds AI-powered web applications, healthcare AI tools, e-commerce
+              platforms, SaaS dashboards, resume and job platforms, writing assistants, booking
+              systems, consulting websites, and service automation platforms.
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -209,7 +209,7 @@ export default function PortfolioPage() {
       <ProjectsSection projects={projects} />
 
       {/* Services */}
-      <section id="services" className="scroll-mt-24 border-y border-white/5 bg-white/[0.02] py-24 sm:py-28">
+      <section id="services" className="scroll-mt-24 border-y border-white/5 bg-white/[0.02] py-28 sm:py-36">
         <div className="mx-auto max-w-6xl px-6">
           <div className="mx-auto max-w-2xl text-center">
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-cyan-300/80">
@@ -244,7 +244,7 @@ export default function PortfolioPage() {
       </section>
 
       {/* Tech Stack */}
-      <section id="tech-stack" className="scroll-mt-24 py-24 sm:py-28">
+      <section id="tech-stack" className="scroll-mt-24 py-28 sm:py-36">
         <div className="mx-auto max-w-6xl px-6">
           <div className="mx-auto max-w-2xl text-center">
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-cyan-300/80">
@@ -285,7 +285,7 @@ export default function PortfolioPage() {
       </section>
 
       {/* Why Us */}
-      <section id="why-us" className="scroll-mt-24 border-y border-white/5 bg-white/[0.02] py-24 sm:py-28">
+      <section id="why-us" className="scroll-mt-24 border-y border-white/5 bg-white/[0.02] py-28 sm:py-36">
         <div className="mx-auto max-w-6xl px-6">
           <div className="mx-auto max-w-2xl text-center">
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-cyan-300/80">
@@ -324,7 +324,7 @@ export default function PortfolioPage() {
       </section>
 
       {/* Process */}
-      <section id="process" className="scroll-mt-24 py-24 sm:py-28">
+      <section id="process" className="scroll-mt-24 py-28 sm:py-36">
         <div className="mx-auto max-w-6xl px-6">
           <div className="mx-auto max-w-2xl text-center">
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-cyan-300/80">
@@ -357,7 +357,7 @@ export default function PortfolioPage() {
       </section>
 
       {/* Final CTA */}
-      <section id="contact" className="scroll-mt-24 px-6 pb-24 sm:pb-28">
+      <section id="contact" className="scroll-mt-24 px-6 pb-28 sm:pb-36">
         <div className="relative mx-auto max-w-5xl overflow-hidden rounded-[2rem] border border-cyan-400/20 bg-gradient-to-br from-[#0d1b36] via-[#0a1630] to-[#111827] px-6 py-16 text-center sm:px-12 sm:py-20">
           <div
             aria-hidden="true"
