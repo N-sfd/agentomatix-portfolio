@@ -1,139 +1,234 @@
 import type { Metadata } from "next";
-import ProjectCard from "@/components/ProjectCard";
-import { projects, services, techStack } from "@/data/projects";
+import SiteHeader from "@/components/SiteHeader";
+import ProjectsSection from "@/components/ProjectsSection";
+import {
+  processSteps,
+  projects,
+  services,
+  techGroups,
+  whyItems,
+} from "@/data/projects";
 
 export const metadata: Metadata = {
-  title: "Agentomatix AI Portfolio",
+  title: "Agentomatix AI Portfolio | Consult America",
   description:
-    "AI web apps, business platforms, healthcare AI, e-commerce systems, and SaaS dashboards built by Consult America.",
+    "AI web applications, SaaS dashboards, healthcare AI tools, e-commerce platforms, writing assistants, resume analyzers, booking systems, and business applications by Consult America.",
+  openGraph: {
+    title: "Agentomatix AI Portfolio | Consult America",
+    description:
+      "AI web applications, SaaS dashboards, healthcare AI tools, e-commerce platforms, writing assistants, resume analyzers, booking systems, and business applications by Consult America.",
+    type: "website",
+    url: "https://agentomatix-portfolio.pages.dev/portfolio/",
+    siteName: "Agentomatix AI Portfolio",
+  },
 };
 
 const CONTACT_EMAIL = "hello@consultamerica.com";
 
-// Freelance profiles. For freelance work, linking to Upwork/Fiverr converts
-// better than personal email. Paste your profile URL(s) here to turn the
-// contact button into a direct "Hire" link. If both are empty, the button
-// gracefully falls back to email.
-const UPWORK_PROFILE_URL = ""; // e.g. https://www.upwork.com/freelancers/~01abc123
-const FIVERR_PROFILE_URL = ""; // e.g. https://www.fiverr.com/yourusername
+const trustBadges = [
+  "OpenAI API Integration",
+  "React / Next.js",
+  "SaaS Dashboards",
+  "Cloud Deployment",
+];
 
-const whyItems = [
-  {
-    title: "Full-Stack + AI Integration",
-    description:
-      "Frontend, backend, APIs, databases, and AI workflows combined into complete working applications.",
-  },
-  {
-    title: "Business-Focused Product Thinking",
-    description:
-      "Each project is designed around a real use case, user workflow, and business outcome.",
-  },
-  {
-    title: "Fast MVP Delivery",
-    description:
-      "Product ideas can move quickly from concept to deployed demo with clean, testable implementation.",
-  },
-  {
-    title: "Clean UI and Responsive Design",
-    description:
-      "Interfaces are built to feel modern, professional, and usable across desktop and mobile devices.",
-  },
-  {
-    title: "Cross-Industry Experience",
-    description:
-      "Experience across healthcare AI, resume platforms, writing tools, commerce systems, booking apps, consulting websites, and service marketplaces.",
-  },
-  {
-    title: "Deployment-Ready Builds",
-    description:
-      "Projects are deployed using platforms such as Cloudflare Pages, Vercel, Netlify, Firebase, and Supabase.",
-  },
+const stats = [
+  { value: "9", label: "Live Projects" },
+  { value: "6+", label: "Industries" },
+  { value: "AI + Full Stack", label: "Product Builds" },
+  { value: "Vercel / Cloudflare", label: "Cloud Deployed" },
+];
+
+const previewCards = [
+  { title: "9 Live Projects", subtitle: "Production demos" },
+  { title: "AI + Full Stack", subtitle: "End-to-end delivery" },
+  { title: "Cloud Deployed", subtitle: "Vercel & Cloudflare" },
+  { title: "Business Ready", subtitle: "Client-focused MVPs" },
 ];
 
 export default function PortfolioPage() {
   return (
-    <main className="bg-white text-slate-900">
+    <main id="top" className="relative overflow-x-hidden bg-[#070d1a] text-slate-100">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 -z-10"
+        style={{
+          backgroundImage:
+            "radial-gradient(ellipse 80% 50% at 50% -20%, rgba(56,189,248,0.18), transparent), radial-gradient(ellipse 40% 40% at 90% 10%, rgba(99,102,241,0.14), transparent), radial-gradient(ellipse 40% 30% at 10% 40%, rgba(34,211,238,0.08), transparent)",
+        }}
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 -z-10 opacity-[0.035]"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(255,255,255,0.8) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.8) 1px, transparent 1px)",
+          backgroundSize: "64px 64px",
+        }}
+      />
+
+      <SiteHeader />
+
       {/* Hero */}
-      <section className="border-b border-slate-100 bg-gradient-to-br from-blue-50 via-white to-teal-50">
-        <div className="mx-auto max-w-5xl px-6 py-20 text-center sm:py-28">
-          <p className="mb-4 inline-flex items-center rounded-full bg-blue-50 px-4 py-1.5 text-sm font-medium text-blue-700">
-            Consult America
-          </p>
-          <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl md:text-6xl">
-            Agentomatix AI Portfolio
-          </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-slate-600 sm:text-xl">
-            AI web apps, business platforms, healthcare AI, e-commerce systems, and SaaS dashboards
-            built with modern full-stack technologies.
-          </p>
+      <section className="relative pt-28 sm:pt-32">
+        <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 pb-16 lg:grid-cols-2 lg:gap-16 lg:pb-20">
+          <div>
+            <p className="inline-flex items-center rounded-full border border-cyan-400/20 bg-cyan-400/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-cyan-200">
+              Consult America
+            </p>
+            <h1 className="mt-5 text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-[3.4rem] lg:leading-[1.08]">
+              Agentomatix AI Portfolio
+            </h1>
+            <p className="mt-5 max-w-xl text-lg leading-relaxed text-slate-300">
+              AI web applications, business platforms, healthcare AI tools, e-commerce systems, and
+              SaaS dashboards built from idea to deployment.
+            </p>
+            <p className="mt-4 max-w-xl text-sm leading-relaxed text-slate-400 sm:text-base">
+              Agentomatix is the AI product and web application portfolio of Consult America,
+              showcasing practical AI tools, full-stack web platforms, automation workflows, and
+              business-ready applications across healthcare, commerce, content, career, consulting,
+              and service industries.
+            </p>
 
-          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-slate-500">
-            Agentomatix is the AI product and web application portfolio of Consult America,
-            showcasing practical AI tools, SaaS dashboards, business platforms, healthcare AI
-            concepts, e-commerce systems, and service automation applications built from idea to
-            deployment.
-          </p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <a
+                href="#projects"
+                className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 px-7 py-3.5 text-sm font-semibold text-slate-950 shadow-[0_0_32px_rgba(34,211,238,0.25)] transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300"
+              >
+                View Featured Projects
+              </a>
+              <a
+                href="#contact"
+                className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
+              >
+                Contact for AI App Development
+              </a>
+            </div>
 
-          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <a
-              href="#projects"
-              className="w-full rounded-full bg-gradient-to-r from-blue-600 to-teal-500 px-8 py-3.5 text-center text-base font-semibold text-white shadow-md transition-opacity hover:opacity-90 sm:w-auto"
-            >
-              View Projects
-            </a>
-            <a
-              href="#contact"
-              className="w-full rounded-full border border-slate-300 bg-white px-8 py-3.5 text-center text-base font-semibold text-slate-700 shadow-sm transition-colors hover:border-blue-300 hover:text-blue-700 sm:w-auto"
-            >
-              Contact for AI App Development
-            </a>
+            <div className="mt-8 flex flex-wrap gap-2">
+              {trustBadges.map((badge) => (
+                <span
+                  key={badge}
+                  className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs font-medium text-slate-300"
+                >
+                  {badge}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div className="relative">
+            <div className="absolute -inset-6 rounded-[2rem] bg-gradient-to-br from-cyan-500/20 via-blue-600/10 to-indigo-500/20 blur-2xl" />
+            <div className="relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-[#0b1428]/90 p-5 shadow-2xl shadow-cyan-500/10 backdrop-blur-sm sm:p-6">
+              <div className="mb-5 flex items-center justify-between">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-cyan-300/80">
+                    Live Portfolio
+                  </p>
+                  <p className="mt-1 text-lg font-semibold text-white">Product Preview Panel</p>
+                </div>
+                <span className="rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 text-xs font-medium text-emerald-300">
+                  Deployed
+                </span>
+              </div>
+
+              <div className="rounded-2xl border border-white/10 bg-gradient-to-br from-slate-900 to-slate-950 p-4">
+                <div className="mb-4 flex items-center gap-2">
+                  <span className="h-2.5 w-2.5 rounded-full bg-rose-400" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-amber-400" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-emerald-400" />
+                  <span className="ml-3 text-xs text-slate-500">agentomatix.app</span>
+                </div>
+                <div className="grid grid-cols-2 gap-3">
+                  {previewCards.map((card, index) => (
+                    <div
+                      key={card.title}
+                      className="rounded-2xl border border-white/10 bg-white/[0.04] p-4 transition-transform duration-500 hover:-translate-y-0.5"
+                      style={{
+                        boxShadow:
+                          index % 2 === 0
+                            ? "0 0 24px rgba(34,211,238,0.08)"
+                            : "0 0 24px rgba(99,102,241,0.08)",
+                      }}
+                    >
+                      <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-400/20 to-blue-500/20 text-xs font-bold text-cyan-200">
+                        {String(index + 1).padStart(2, "0")}
+                      </div>
+                      <p className="mt-3 text-sm font-semibold text-white">{card.title}</p>
+                      <p className="mt-1 text-xs text-slate-400">{card.subtitle}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="mt-4 grid grid-cols-3 gap-2">
+                {projects.slice(0, 3).map((project) => (
+                  <div
+                    key={project.slug}
+                    className="rounded-xl border border-white/10 bg-gradient-to-br from-cyan-500/10 to-indigo-500/10 px-3 py-3 text-center"
+                  >
+                    <p className="text-xs font-semibold text-white">
+                      {project.name
+                        .split(" ")
+                        .map((w) => w[0])
+                        .join("")
+                        .slice(0, 2)}
+                    </p>
+                    <p className="mt-1 truncate text-[10px] text-slate-400">{project.name}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Projects */}
-      <section id="projects" className="mx-auto max-w-6xl px-6 py-20 sm:py-24">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-            Featured Projects
-          </h2>
-          <p className="mt-4 text-slate-600">
-            A selection of AI-powered applications, business platforms, and full-stack web products
-            built from product design to live deployment.
-          </p>
-        </div>
-
-        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project) => (
-            <ProjectCard key={project.slug} project={project} />
+      {/* Stats */}
+      <section className="border-y border-white/5 bg-white/[0.02] py-10">
+        <div className="mx-auto grid max-w-6xl grid-cols-2 gap-4 px-6 lg:grid-cols-4">
+          {stats.map((stat) => (
+            <div
+              key={stat.label}
+              className="rounded-2xl border border-white/10 bg-gradient-to-br from-white/[0.05] to-transparent p-5 text-center"
+            >
+              <p className="text-lg font-semibold text-white sm:text-xl">{stat.value}</p>
+              <p className="mt-1 text-xs text-slate-400 sm:text-sm">{stat.label}</p>
+            </div>
           ))}
         </div>
       </section>
 
+      <ProjectsSection projects={projects} />
+
       {/* Services */}
-      <section className="border-y border-slate-100 bg-slate-50/60 py-20 sm:py-24">
+      <section id="services" className="scroll-mt-24 border-y border-white/5 bg-white/[0.02] py-24 sm:py-28">
         <div className="mx-auto max-w-6xl px-6">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-cyan-300/80">
               Services
+            </p>
+            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+              AI and Web Development Services
             </h2>
-            <p className="mt-4 text-slate-600">
-              Practical AI development services for startups, agencies, and growing businesses.
+            <p className="mt-4 text-base leading-relaxed text-slate-400">
+              Practical development services for startups, agencies, small businesses, and growing
+              companies.
             </p>
           </div>
 
-          <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((service) => (
               <div
-                key={service}
-                className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"
+                key={service.title}
+                className="rounded-3xl border border-white/10 bg-[#0b1428]/70 p-6 transition-all hover:-translate-y-0.5 hover:border-cyan-400/30 hover:shadow-[0_16px_40px_-24px_rgba(34,211,238,0.45)]"
               >
-                <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-blue-600 to-teal-500 text-white">
-                  <svg className="h-4.5 w-4.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-400/20 to-blue-500/20 text-cyan-300">
+                  <svg className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                     <path d="M10 2a1 1 0 01.894.553l1.382 2.764 3.05.443a1 1 0 01.554 1.706l-2.207 2.151.521 3.038a1 1 0 01-1.451 1.054L10 12.27l-2.743 1.44a1 1 0 01-1.451-1.054l.52-3.038-2.206-2.15a1 1 0 01.554-1.706l3.05-.444 1.382-2.763A1 1 0 0110 2z" />
                   </svg>
-                </span>
-                <span className="font-medium text-slate-800">{service}</span>
+                </div>
+                <h3 className="mt-4 text-lg font-semibold text-white">{service.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-slate-400">{service.description}</p>
               </div>
             ))}
           </div>
@@ -141,66 +236,39 @@ export default function PortfolioPage() {
       </section>
 
       {/* Tech Stack */}
-      <section className="mx-auto max-w-6xl px-6 py-20 sm:py-24">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-            Tech Stack
-          </h2>
-          <p className="mt-4 text-slate-600">
-            Modern, production-ready tools used to ship fast and reliable AI products.
-          </p>
-        </div>
-
-        <div className="mt-10 flex flex-wrap justify-center gap-3">
-          {techStack.map((tech) => (
-            <span
-              key={tech}
-              className="rounded-full border border-slate-200 bg-white px-5 py-2 text-sm font-medium text-slate-700 shadow-sm"
-            >
-              {tech}
-            </span>
-          ))}
-        </div>
-      </section>
-
-      {/* Why Work With Consult America */}
-      <section className="border-y border-slate-100 bg-slate-50/60 py-20 sm:py-24">
+      <section id="tech-stack" className="scroll-mt-24 py-24 sm:py-28">
         <div className="mx-auto max-w-6xl px-6">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-              Why Work With Consult America
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-cyan-300/80">
+              Capabilities
+            </p>
+            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+              Tech Stack
             </h2>
-            <p className="mt-4 text-slate-600">
-              Practical product development focused on real business use cases, not just design
-              mockups.
+            <p className="mt-4 text-base leading-relaxed text-slate-400">
+              Modern, production-ready tools used to ship reliable AI products and business
+              platforms.
             </p>
           </div>
 
-          <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {whyItems.map((item) => (
+          <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {techGroups.map((group) => (
               <div
-                key={item.title}
-                className="flex items-start gap-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
+                key={group.label}
+                className="rounded-3xl border border-white/10 bg-white/[0.03] p-6"
               >
-                <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-blue-600 to-teal-500 text-white">
-                  <svg
-                    className="h-5 w-5"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 111.42-1.42l2.79 2.8 6.79-6.8a1 1 0 011.42 0z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                </span>
-                <div>
-                  <h3 className="font-semibold text-slate-900">{item.title}</h3>
-                  <p className="mt-1 text-sm leading-relaxed text-slate-600">
-                    {item.description}
-                  </p>
+                <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-cyan-300">
+                  {group.label}
+                </h3>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {group.items.map((item) => (
+                    <span
+                      key={item}
+                      className="rounded-full border border-white/10 bg-[#0b1428] px-3 py-1.5 text-xs font-medium text-slate-200"
+                    >
+                      {item}
+                    </span>
+                  ))}
                 </div>
               </div>
             ))}
@@ -208,48 +276,112 @@ export default function PortfolioPage() {
         </div>
       </section>
 
+      {/* Why Us */}
+      <section id="why-us" className="scroll-mt-24 border-y border-white/5 bg-white/[0.02] py-24 sm:py-28">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="mx-auto max-w-2xl text-center">
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-cyan-300/80">
+              Difference
+            </p>
+            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+              Why Work With Consult America
+            </h2>
+            <p className="mt-4 text-base leading-relaxed text-slate-400">
+              Practical product development focused on real business use cases, not just design
+              mockups.
+            </p>
+          </div>
+
+          <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {whyItems.map((item) => (
+              <div
+                key={item.title}
+                className="rounded-3xl border border-white/10 bg-[#0b1428]/70 p-6"
+              >
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-cyan-400 to-blue-500 text-slate-950">
+                  <svg className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path
+                      fillRule="evenodd"
+                      d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 111.42-1.42l2.79 2.8 6.79-6.8a1 1 0 011.42 0z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </div>
+                <h3 className="mt-4 font-semibold text-white">{item.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-slate-400">{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Process */}
+      <section id="process" className="scroll-mt-24 py-24 sm:py-28">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="mx-auto max-w-2xl text-center">
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-cyan-300/80">
+              Delivery
+            </p>
+            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+              How We Build
+            </h2>
+            <p className="mt-4 text-base leading-relaxed text-slate-400">
+              A clear path from business idea to deployed product.
+            </p>
+          </div>
+
+          <div className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
+            {processSteps.map((step, index) => (
+              <div
+                key={step.title}
+                className="relative rounded-3xl border border-white/10 bg-white/[0.03] p-6"
+              >
+                <p className="text-sm font-semibold text-cyan-300">{step.step}</p>
+                <h3 className="mt-3 text-lg font-semibold text-white">{step.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-slate-400">{step.description}</p>
+                {index < processSteps.length - 1 ? (
+                  <div className="absolute -right-3 top-1/2 hidden h-px w-6 bg-gradient-to-r from-cyan-400/50 to-transparent lg:block" />
+                ) : null}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Final CTA */}
-      <section id="contact" className="bg-gradient-to-r from-blue-600 to-teal-500">
-        <div className="mx-auto max-w-3xl px-6 py-20 text-center sm:py-24">
-          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-            Have an AI product or business app idea?
-          </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-white/90 sm:text-lg">
-            Let&rsquo;s turn your idea into a working web application, AI tool, SaaS dashboard, or
-            automation platform.
-          </p>
+      <section id="contact" className="scroll-mt-24 px-6 pb-24 sm:pb-28">
+        <div className="relative mx-auto max-w-5xl overflow-hidden rounded-[2rem] border border-cyan-400/20 bg-gradient-to-br from-[#0d1b36] via-[#0a1630] to-[#111827] px-6 py-16 text-center sm:px-12 sm:py-20">
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(34,211,238,0.18),transparent_55%)]"
+          />
+          <div className="relative">
+            <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+              Have an AI product or business app idea?
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-slate-300">
+              Let&rsquo;s turn your idea into a working AI web application, SaaS dashboard,
+              e-commerce platform, booking system, or automation tool.
+            </p>
 
-          <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            {UPWORK_PROFILE_URL ? (
-              <a
-                href={UPWORK_PROFILE_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex w-full justify-center rounded-full bg-white px-8 py-3.5 text-base font-semibold text-blue-700 shadow-md transition-opacity hover:opacity-90 sm:w-auto"
-              >
-                Hire on Upwork
-              </a>
-            ) : null}
-
-            {FIVERR_PROFILE_URL ? (
-              <a
-                href={FIVERR_PROFILE_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex w-full justify-center rounded-full border border-white/70 bg-white/10 px-8 py-3.5 text-base font-semibold text-white shadow-md transition-colors hover:bg-white/20 sm:w-auto"
-              >
-                Hire on Fiverr
-              </a>
-            ) : null}
-
-            {!UPWORK_PROFILE_URL && !FIVERR_PROFILE_URL ? (
+            <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <a
                 href={`mailto:${CONTACT_EMAIL}`}
-                className="inline-flex w-full justify-center rounded-full bg-white px-8 py-3.5 text-base font-semibold text-blue-700 shadow-md transition-opacity hover:opacity-90 sm:w-auto"
+                className="inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 px-8 py-3.5 text-sm font-semibold text-slate-950 shadow-[0_0_32px_rgba(34,211,238,0.25)] transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 sm:w-auto"
               >
-                Contact Consult America
+                Start a Project
               </a>
-            ) : null}
+              <a
+                href="#projects"
+                className="inline-flex w-full items-center justify-center rounded-full border border-white/15 bg-white/5 px-8 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 sm:w-auto"
+              >
+                View Live Projects
+              </a>
+            </div>
+
+            <p className="mt-6 text-sm text-slate-400">
+              Available for freelance, contract, and remote AI development projects.
+            </p>
           </div>
         </div>
       </section>

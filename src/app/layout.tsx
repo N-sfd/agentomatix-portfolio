@@ -13,9 +13,23 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Agentomatix AI Portfolio",
+  title: "Agentomatix AI Portfolio | Consult America",
   description:
-    "AI web apps, business platforms, healthcare AI, e-commerce systems, and SaaS dashboards built by Consult America.",
+    "AI web applications, SaaS dashboards, healthcare AI tools, e-commerce platforms, writing assistants, resume analyzers, booking systems, and business applications by Consult America.",
+  openGraph: {
+    title: "Agentomatix AI Portfolio | Consult America",
+    description:
+      "AI web applications, SaaS dashboards, healthcare AI tools, e-commerce platforms, writing assistants, resume analyzers, booking systems, and business applications by Consult America.",
+    type: "website",
+    url: "https://agentomatix-portfolio.pages.dev/portfolio/",
+    siteName: "Agentomatix AI Portfolio",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Agentomatix AI Portfolio | Consult America",
+    description:
+      "AI web applications, SaaS dashboards, healthcare AI tools, e-commerce platforms, and business applications by Consult America.",
+  },
 };
 
 export default function RootLayout({
@@ -28,7 +42,7 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col bg-[#070d1a] text-slate-100">{children}</body>
     </html>
   );
 }

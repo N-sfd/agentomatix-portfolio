@@ -1,94 +1,77 @@
 import type { Project } from "@/data/projects";
 
-export default function ProjectCard({ project }: { project: Project }) {
+type ProjectCardProps = {
+  project: Project;
+  onViewDetails: () => void;
+};
+
+export default function ProjectCard({ project, onViewDetails }: ProjectCardProps) {
   return (
-    <div className="flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-shadow hover:shadow-lg">
-      <ProjectPreview project={project} />
-
-      <div className="flex flex-1 flex-col p-6 sm:p-7">
-      <div className="mb-3 inline-flex w-fit items-center rounded-full bg-teal-50 px-3 py-1 text-xs font-medium text-teal-700">
-        {project.category}
+    <article className="group flex h-full flex-col overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] shadow-[0_0_0_1px_rgba(255,255,255,0.02)] transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400/40 hover:shadow-[0_20px_60px_-20px_rgba(34,211,238,0.35)]">
+      <div className="relative aspect-[16/10] overflow-hidden border-b border-white/10 bg-slate-900">
+        {project.image ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={project.image}
+            alt={`Screenshot of ${project.name}`}
+            loading="lazy"
+            className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+          />
+        ) : (
+          <ProjectPlaceholder project={project} />
+        )}
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#070d1a]/50 via-transparent to-transparent" />
       </div>
 
-      <h3 className="text-xl font-semibold text-slate-900">{project.name}</h3>
+      <div className="flex flex-1 flex-col p-6">
+        <div className="inline-flex w-fit items-center rounded-full border border-cyan-400/20 bg-cyan-400/10 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.14em] text-cyan-200">
+          {project.category}
+        </div>
 
-      <p className="mt-3 text-sm leading-relaxed text-slate-600">
-        {project.description}
-      </p>
+        <h3 className="mt-4 text-xl font-semibold tracking-tight text-white">{project.name}</h3>
 
-      {project.features.length > 0 ? (
-        <ul className="mt-4 space-y-2">
-          {project.features.map((feature) => (
-            <li key={feature} className="flex items-start gap-2 text-sm text-slate-700">
-              <svg
-                className="mt-0.5 h-4 w-4 flex-shrink-0 text-blue-600"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M16.704 5.29a1 1 0 010 1.42l-7.5 7.5a1 1 0 01-1.42 0l-3.5-3.5a1 1 0 111.42-1.42l2.79 2.8 6.79-6.8a1 1 0 011.42 0z"
-                  clipRule="evenodd"
-                />
-              </svg>
-              <span>{feature}</span>
-            </li>
+        <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-slate-400">
+          {project.description}
+        </p>
+
+        <div className="mt-5 flex flex-wrap gap-2">
+          {project.tags.slice(0, 6).map((tag) => (
+            <span
+              key={tag}
+              className="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] font-medium text-slate-300"
+            >
+              {tag}
+            </span>
           ))}
-        </ul>
-      ) : null}
+        </div>
 
-      <div className="mt-5 flex flex-wrap gap-2">
-        {project.techStack.map((tech) => (
-          <span
-            key={tech}
-            className="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600"
+        <div className="mt-6 flex flex-1 flex-col justify-end gap-3 sm:flex-row">
+          <a
+            href={project.liveUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 px-4 py-2.5 text-sm font-semibold text-slate-950 transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300"
           >
-            {tech}
-          </span>
-        ))}
+            View Live Demo
+            <svg className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
+              <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 100-2H5z" />
+            </svg>
+          </a>
+          <button
+            type="button"
+            onClick={onViewDetails}
+            className="inline-flex flex-1 items-center justify-center rounded-full border border-white/15 bg-white/5 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
+          >
+            View Details
+          </button>
+        </div>
       </div>
-
-      <div className="mt-6 flex-1" />
-
-      {project.liveUrl ? (
-        <a
-          href={project.liveUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center justify-center gap-1.5 rounded-full bg-gradient-to-r from-blue-600 to-teal-500 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-opacity hover:opacity-90"
-        >
-          View Live Demo
-          <svg className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-            <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
-            <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 100-2H5z" />
-          </svg>
-        </a>
-      ) : (
-        <span className="inline-flex items-center justify-center rounded-full border border-slate-200 px-5 py-2.5 text-sm font-medium text-slate-400">
-          Concept / Private Build
-        </span>
-      )}
-      </div>
-    </div>
+    </article>
   );
 }
 
-function ProjectPreview({ project }: { project: Project }) {
-  if (project.image) {
-    return (
-      <div className="relative aspect-[16/10] w-full overflow-hidden border-b border-slate-100 bg-slate-100">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={project.image}
-          alt={`Screenshot of ${project.name}`}
-          loading="lazy"
-          className="h-full w-full object-cover object-top"
-        />
-      </div>
-    );
-  }
-
+function ProjectPlaceholder({ project }: { project: Project }) {
   const initials = project.name
     .split(" ")
     .map((word) => word[0])
@@ -97,7 +80,7 @@ function ProjectPreview({ project }: { project: Project }) {
     .toUpperCase();
 
   return (
-    <div className="relative flex aspect-[16/10] w-full flex-col items-center justify-center border-b border-slate-100 bg-gradient-to-br from-blue-600 to-teal-500 px-6 text-center">
+    <div className="flex h-full w-full flex-col items-center justify-center bg-gradient-to-br from-blue-700 via-cyan-600 to-indigo-700 px-6 text-center">
       <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/15 text-xl font-bold text-white ring-1 ring-white/25">
         {initials}
       </span>
