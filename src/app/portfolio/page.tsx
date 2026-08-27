@@ -74,13 +74,13 @@ export default function PortfolioPage() {
       <section className="relative pt-24 sm:pt-28 lg:pt-32">
         <div className="mx-auto grid max-w-6xl items-center gap-8 px-4 pb-12 sm:gap-10 sm:px-6 sm:pb-16 lg:grid-cols-2 lg:gap-16 lg:px-8 lg:pb-20">
           <div className="min-w-0">
-            <p className="inline-flex max-w-full items-center gap-2 rounded-full border border-cyan-400/20 bg-cyan-400/10 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-cyan-200 sm:gap-2.5 sm:text-xs sm:tracking-[0.18em]">
+            <p className="inline-flex max-w-full items-center gap-2 rounded-full border border-cyan-400/20 bg-slate-950/60 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-cyan-200 sm:gap-2.5 sm:text-xs sm:tracking-[0.18em]">
               <Image
-                src="/logo.png"
+                src="/consult-america-logo.svg"
                 alt=""
                 width={20}
                 height={20}
-                className="h-4 w-4 shrink-0 object-contain sm:h-5 sm:w-5"
+                className="h-5 w-5 shrink-0 object-contain"
               />
               <span className="truncate">Consult America</span>
             </p>
@@ -435,13 +435,15 @@ export default function PortfolioPage() {
       <footer className="border-t border-white/10 bg-[#050a14] px-4 py-10 sm:px-6 sm:py-12 lg:px-8">
         <div className="mx-auto flex max-w-6xl flex-col items-center gap-5 text-center sm:flex-row sm:items-start sm:justify-between sm:gap-6 sm:text-left">
           <div className="flex flex-col items-center gap-3 sm:flex-row sm:items-start">
-            <Image
-              src="/logo.png"
-              alt="Consult America logo"
-              width={40}
-              height={40}
-              className="h-10 w-10 object-contain"
-            />
+            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-cyan-400/20 bg-slate-950/60">
+              <Image
+                src="/consult-america-logo.svg"
+                alt="Consult America logo"
+                width={36}
+                height={36}
+                className="h-9 w-9 object-contain"
+              />
+            </span>
             <div>
               <p className="text-sm font-semibold text-white">
                 Consult America | Agentomatix AI Portfolio

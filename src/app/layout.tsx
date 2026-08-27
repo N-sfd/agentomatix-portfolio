@@ -25,16 +25,19 @@ export const metadata: Metadata = {
     siteName: "Agentomatix AI Portfolio",
     images: [
       {
-        url: "https://agentomatix-portfolio.pages.dev/logo.png",
-        width: 256,
-        height: 256,
+        url: "https://agentomatix-portfolio.pages.dev/consult-america-logo.png",
+        width: 512,
+        height: 512,
         alt: "Consult America logo",
       },
     ],
   },
   icons: {
-    icon: "/logo.png",
-    apple: "/logo.png",
+    icon: [
+      { url: "/consult-america-logo.svg", type: "image/svg+xml" },
+      { url: "/consult-america-logo.png", type: "image/png" },
+    ],
+    apple: "/consult-america-logo.png",
   },
 };
 

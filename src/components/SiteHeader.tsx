@@ -40,13 +40,13 @@ export default function SiteHeader() {
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:gap-4 sm:px-6 sm:py-3.5 lg:px-8">
         <a href="#top" className="group flex min-w-0 items-center gap-2.5 sm:gap-3">
-          <span className="relative flex h-9 w-9 shrink-0 items-center justify-center overflow-hidden rounded-xl bg-white/5 ring-1 ring-white/10 sm:h-10 sm:w-10">
+          <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-cyan-400/20 bg-slate-950/60">
             <Image
-              src="/logo.png"
+              src="/consult-america-logo.svg"
               alt="Consult America logo"
               width={40}
               height={40}
-              className="h-8 w-8 object-contain drop-shadow-[0_0_14px_rgba(34,211,238,0.3)] sm:h-9 sm:w-9"
+              className="h-9 w-9 object-contain sm:h-10 sm:w-10"
               priority
             />
           </span>
