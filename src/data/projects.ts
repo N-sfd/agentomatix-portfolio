@@ -59,8 +59,8 @@ export const projects: Project[] = [
       "Cloudflare",
       "Responsive Design",
     ],
-    liveUrl: "https://consult-america.hrconsult.workers.dev/",
-    image: screenshot("https://consult-america.hrconsult.workers.dev/"),
+    liveUrl: "https://consult-america-theta.vercel.app/",
+    image: screenshot("https://consult-america-theta.vercel.app/"),
     details: {
       problem:
         "Consulting firms need a credible digital presence that clearly communicates AI transformation and enterprise technology services to decision-makers.",
@@ -90,8 +90,8 @@ export const projects: Project[] = [
       "Responsible AI",
       "Cloudflare",
     ],
-    liveUrl: "https://medi.hrconsult.workers.dev/",
-    image: screenshot("https://medi.hrconsult.workers.dev/"),
+    liveUrl: "https://mediguide-ai-woad.vercel.app/",
+    image: screenshot("https://mediguide-ai-woad.vercel.app/"),
     details: {
       problem:
         "Patients and care teams need clearer, safer AI-assisted communication without replacing clinical judgment.",
