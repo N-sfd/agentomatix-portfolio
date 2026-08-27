@@ -109,32 +109,33 @@ export const projects: Project[] = [
   {
     slug: "importnest-ai-agent",
     name: "ImportNest AI Agent",
-    category: "AI Commerce Platform",
+    category: "AI Shopping Comparison Platform",
     description:
-      "AI commerce platform for retailers, online stores, product recommendations, shopping assistance, customer support, and intelligent commerce automation.",
+      "AI-powered shopping comparison platform that searches approved retailers, compares Total Known Cost (item + shipping + fees), and helps shoppers choose offers with natural-language search and price alerts.",
     filters: ["AI", "Commerce", "E-Commerce"],
     tags: [
-      "AI Commerce",
-      "Retail AI",
-      "Shopping Assistant",
-      "Product Recommendations",
+      "AI Shopping",
+      "Price Comparison",
+      "Total Known Cost",
+      "Approved Retailers",
       "Next.js",
-      "OpenAI",
+      "Vercel",
     ],
     liveUrl: "https://importnest.vercel.app/",
     image: screenshot("https://importnest.vercel.app/"),
     details: {
       problem:
-        "Retailers need intelligent product discovery and shopping support without rebuilding their entire storefront stack.",
+        "Shoppers struggle to compare real purchase cost across retailers when shipping, fees, and offer quality are unclear.",
       features: [
-        "Product recommendations",
-        "Shopping assistant workflows",
-        "Customer support automation",
-        "Inventory visibility concepts",
+        "Natural-language AI-friendly product search",
+        "Compare offers from approved retailers only",
+        "Total Known Cost: item + shipping + fees",
+        "Price alerts, favourites, and labeled sponsored results",
+        "Category browsing across electronics, appliances, kitchen, and more",
       ],
-      tech: ["Next.js", "React", "OpenAI API", "TypeScript", "Vercel"],
+      tech: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Vercel"],
       useCase:
-        "Built for online stores, Shopify/WooCommerce-style businesses, and product-based websites seeking commerce AI.",
+        "A consumer shopping comparison product for transparent multi-retailer offer discovery with clear total cost before purchase.",
     },
   },
   {
