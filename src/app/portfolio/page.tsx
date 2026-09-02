@@ -34,14 +34,14 @@ const trustBadges = [
 ];
 
 const stats = [
-  { value: "9", label: "Live Projects" },
+  { value: "10", label: "Live Projects" },
   { value: "6+", label: "Industries" },
   { value: "AI + Full Stack", label: "Builds" },
   { value: "Cloud Deployed", label: "Vercel / Cloudflare" },
 ];
 
 const previewCards = [
-  { title: "9 Live Projects", subtitle: "Production demos" },
+  { title: "10 Live Projects", subtitle: "Production demos" },
   { title: "AI + Full Stack", subtitle: "End-to-end delivery" },
   { title: "Cloud Deployed", subtitle: "Vercel & Cloudflare" },
   { title: "Business Ready", subtitle: "Client-focused MVPs" },

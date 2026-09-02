@@ -59,8 +59,8 @@ export const projects: Project[] = [
       "Cloudflare",
       "Responsive Design",
     ],
-    liveUrl: "https://consult-america-theta.vercel.app/",
-    image: screenshot("https://consult-america-theta.vercel.app/"),
+    liveUrl: "https://consultamerica-nu.vercel.app/",
+    image: screenshot("https://consultamerica-nu.vercel.app/"),
     details: {
       problem:
         "Consulting firms need a credible digital presence that clearly communicates AI transformation and enterprise technology services to decision-makers.",
@@ -73,6 +73,38 @@ export const projects: Project[] = [
       tech: ["Next.js", "React", "Tailwind CSS", "Cloudflare Workers"],
       useCase:
         "Ideal for consulting agencies and transformation practices that need a polished company website to win enterprise clients.",
+    },
+  },
+  {
+    slug: "data-agent",
+    name: "Data Agent",
+    category: "Contract Intelligence Platform",
+    description:
+      "Enterprise contract intelligence platform for extraction, search, comparison, and review — turning complex agreements into structured, source-verified data across a searchable repository.",
+    filters: ["AI", "Business"],
+    tags: [
+      "Contract Intelligence",
+      "Document Extraction",
+      "Enterprise AI",
+      "Source Verification",
+      "Contract Repository",
+      "Next.js",
+    ],
+    liveUrl: "https://data-agent-ca.vercel.app/",
+    image: screenshot("https://data-agent-ca.vercel.app/"),
+    details: {
+      problem:
+        "Legal and procurement teams need to extract, verify, and search contract fields across large document repositories without losing source-level confidence.",
+      features: [
+        "Upload and extract fields, tables, and clauses with source evidence",
+        "Searchable contract repository and field explorer",
+        "FAR/DFARS clause comparison and relationship mapping",
+        "Human review queue for low-confidence extractions",
+        "Ask Data Agent for custom concepts with page-level grounding",
+      ],
+      tech: ["Next.js", "React", "OpenAI API", "Tailwind CSS", "Vercel"],
+      useCase:
+        "Built for enterprise teams managing contract portfolios, compliance reviews, and document intelligence workflows at scale.",
     },
   },
   {
