@@ -60,7 +60,7 @@ export const projects: Project[] = [
       "Responsive Design",
     ],
     liveUrl: "https://consultamerica-nu.vercel.app/",
-    image: screenshot("https://consultamerica-nu.vercel.app/"),
+    image: "/projects/consultamerica.png",
     details: {
       problem:
         "Consulting firms need a credible digital presence that clearly communicates AI transformation and enterprise technology services to decision-makers.",
@@ -123,7 +123,7 @@ export const projects: Project[] = [
       "Cloudflare",
     ],
     liveUrl: "https://mediguide-ai-woad.vercel.app/",
-    image: screenshot("https://mediguide-ai-woad.vercel.app/"),
+    image: "/projects/mediguide.png",
     details: {
       problem:
         "Patients and care teams need clearer, safer AI-assisted communication without replacing clinical judgment.",
